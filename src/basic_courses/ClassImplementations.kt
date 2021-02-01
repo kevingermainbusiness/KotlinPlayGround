@@ -7,5 +7,6 @@ fun main() {
     val coding = Person()
 
     kevin likes coding
+    println(coding.getLikedPeopleFirstName())
 
 }

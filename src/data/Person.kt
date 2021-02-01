@@ -10,7 +10,7 @@ data class Person(
         val phone: String = ""
 ) {
     var nickName: String? = null
-    private val likedPeople = mutableListOf<Person>()
+    val likedPeople = mutableListOf<Person>()
 
     fun printInfo() {
         val info = (
@@ -24,8 +24,18 @@ data class Person(
         likedPeople.add(other)
     }
 
-    init {
-        likedPeople.add(Person("Jack", "Dorsey", "Malibu,CA,USA", "+1 345 456 678"))
+    fun getLikedPeopleFirstName(): List<String> {
+        val mPeopleName = mutableListOf<String>()
+        likedPeople.add(
+                Person("Jack",
+                        "Dorsey",
+                        "Malibu,CA,USA",
+                        "+1 345 456 678")
+        )
+        likedPeople.forEach { people ->
+            mPeopleName.add(people.firstName)
+        }
+        return mPeopleName
     }
 
     /** Custom iterator to help loop through the [likedPeople]*/
