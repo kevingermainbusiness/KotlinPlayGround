@@ -2,7 +2,7 @@ package data
 
 /** @author Kevin Germain
  * Custom data class to perform query, loop and better understand the KT language
- * */
+ */
 data class Person(
         var firstName: String = "",
         var lastName: String = "",
@@ -24,7 +24,11 @@ data class Person(
         likedPeople.add(other)
     }
 
-    fun getCodePartnerFirstName(): List<String> {
+    fun codesWith(vararg other: Person) {
+        likedPeople.addAll(other)
+    }
+
+    fun getCodePartnerFirstNames(): List<String> {
         val mPeopleName = mutableListOf<String>()
         likedPeople.forEach { people ->
             mPeopleName.add(people.firstName)
