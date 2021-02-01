@@ -4,9 +4,9 @@ import data.Person
 
 fun main() {
     val kevin = Person()
-    val coding = Person()
+    val jack = Person("Jack", "Dorsey", "Malibu,CA,USA", "+1 345 456 678")
 
-    kevin likes coding
-    println(coding.getLikedPeopleFirstName())
+    kevin codesWith jack
+    println(kevin.getCodePartnerFirstName())
 
 }

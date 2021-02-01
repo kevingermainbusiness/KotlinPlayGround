@@ -20,18 +20,12 @@ data class Person(
         println(info)
     }
 
-    infix fun likes(other: Person) {
+    infix fun codesWith(other: Person) {
         likedPeople.add(other)
     }
 
-    fun getLikedPeopleFirstName(): List<String> {
+    fun getCodePartnerFirstName(): List<String> {
         val mPeopleName = mutableListOf<String>()
-        likedPeople.add(
-                Person("Jack",
-                        "Dorsey",
-                        "Malibu,CA,USA",
-                        "+1 345 456 678")
-        )
         likedPeople.forEach { people ->
             mPeopleName.add(people.firstName)
         }
